@@ -1,0 +1,59 @@
+" Number lines
+set nu
+
+" Set no wrapping on lines
+"set nowrap
+set wrap
+
+" tabstop - Number of spaces that <Tab> in the file counts for
+set tabstop=4
+" shiftwidth - Number of spaces to use for each step of (auto)indent
+set shiftwidth=4
+"
+set softtabstop=4
+" expand tab key to tabstop length
+set expandtab
+
+
+" Syntax highlighting
+syntax on
+
+" Aids in pasting unmodified text
+set paste
+
+" Auto indents
+"set ai
+"set smartindent
+set scrolloff=10
+set undodir=~/.vim/undo-dir
+set undofile
+
+"set ruler
+
+" File type indent
+"filetype indent plugin on
+
+" wrap at last space
+set wrapmargin=1
+
+" ignore case when searching
+set ignorecase
+
+" highlight search
+set hls
+
+" runtime vimrc
+
+" Enable 256 color scheme if the host allows
+set t_Co=256
+
+" Set colorscheme
+"colorscheme evening
+colorscheme espresso
+
+" Normal mode
+" Ctrl + j move down
+nnoremap <C-j> :m .+1<CR>==
+" Ctrl + k move up
+nnoremap <C-k> :m .-2<CR>==
+

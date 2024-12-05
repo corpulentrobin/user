@@ -1,0 +1,10 @@
+#!/bin/bash
+
+session=$(tmux ls 2>/dev/null)
+
+if [[ $session!= "" ]]; then
+  tmux attach -t primary_session
+else
+  tmux new -s primary_session
+fi
+

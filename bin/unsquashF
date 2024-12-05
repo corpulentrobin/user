@@ -1,0 +1,6 @@
+#!/bin/bash
+
+unsquashfs -d . $1
+
+#unsquashfs -ls $1
+# sqfscat $1 filename

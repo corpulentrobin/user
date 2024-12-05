@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#find . -type f | xargs grep -rnsI -e FIXME
+find . -type f -exec grep -nsI -e FIXME {} \;
+

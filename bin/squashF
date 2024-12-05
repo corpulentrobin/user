@@ -1,0 +1,5 @@
+#!/bin/bash
+folder=$1
+
+mksquashfs "$1" "$1".squash -no-strip -comp lz4 -Xhc
+

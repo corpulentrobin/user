@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Define protected directories
+PROTECTED_DIRS=(
+    "$HOME"
+    "/"
+    "/home"
+    "/root"
+    "/etc"
+    "/var"
+)
+
+is_protected() {
+    local target="$1"
+    for dir in "${PROTECTED_DIRS[@]}"; do
+        if [[ "$target" == "$dir" || "$target" == "$dir/"* ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+for arg in "$@"; do
+    # Resolve any '~' or other shell expansions
+    resolved_arg=$(eval echo "$arg")
+    if is_protected "$resolved_arg"; then
+        echo "Error: Attempt to remove a protected directory ($resolved_arg). Operation aborted."
+        exit 1
+    fi
+done
+
+rm $@
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#find . -type f | xargs grep -rnsI -e TODO
+find . -type f -exec grep -nsI -e TODO {} \;
+
